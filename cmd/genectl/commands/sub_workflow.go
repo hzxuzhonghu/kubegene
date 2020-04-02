@@ -18,6 +18,7 @@ package commands
 
 import (
 	"bytes"
+	"context"
 	"encoding/json"
 	"fmt"
 	"html/template"
@@ -26,6 +27,7 @@ import (
 
 	"github.com/renstrom/dedent"
 	"github.com/spf13/cobra"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
 	"kubegene.io/kubegene/cmd/genectl/client"
 	"kubegene.io/kubegene/cmd/genectl/parser"
@@ -132,7 +134,7 @@ func ProcessWorkflow(cmd *cobra.Command, workflowPath string, inputs map[string]
 	}
 
 	// submit execution to api server.
-	newExec, err := geneClient.ExecutionV1alpha1().Executions(execution.Namespace).Create(execution)
+	newExec, err := geneClient.ExecutionV1alpha1().Executions(execution.Namespace).Create(context.TODO(), execution, metav1.CreateOptions{})
 	if err != nil {
 		ExitWithError(fmt.Errorf("submit execution error: %v", err))
 	}
