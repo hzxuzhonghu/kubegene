@@ -60,7 +60,7 @@ func createRecorder(kubeClient clientset.Interface) record.EventRecorder {
 	// Add Execution types to the defualt Kubernetes so events can be logged for them.
 	execscheme.AddToScheme(scheme.Scheme)
 	eventBroadcaster := record.NewBroadcaster()
-	eventBroadcaster.StartLogging(glog.Infof)
+	eventBroadcaster.StartLogging(klog.Infof)
 	eventBroadcaster.StartRecordingToSink(&v1core.EventSinkImpl{Interface: v1core.New(kubeClient.CoreV1().RESTClient()).Events("")})
 	return eventBroadcaster.NewRecorder(scheme.Scheme, apiv1.EventSource{Component: "gene-controller"})
 }
@@ -189,7 +189,7 @@ func Run(o *options.ExecutionOption, stopCh <-chan struct{}) error {
 		Callbacks: leaderelection.LeaderCallbacks{
 			OnStartedLeading: run,
 			OnStoppedLeading: func() {
-				glog.Fatalf("leaderelection lost")
+				klog.Fatalf("leaderelection lost")
 			},
 		},
 	})

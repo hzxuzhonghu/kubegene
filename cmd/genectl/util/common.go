@@ -33,7 +33,7 @@ import (
 func GetFlagString(cmd *cobra.Command, flag string) string {
 	s, err := cmd.Flags().GetString(flag)
 	if err != nil {
-		glog.Fatalf("error accessing flag %s for command %s: %v", flag, cmd.Name(), err)
+		klog.Fatalf("error accessing flag %s for command %s: %v", flag, cmd.Name(), err)
 	}
 	return s
 }
@@ -41,7 +41,7 @@ func GetFlagString(cmd *cobra.Command, flag string) string {
 func GetFlagBool(cmd *cobra.Command, flag string) bool {
 	b, err := cmd.Flags().GetBool(flag)
 	if err != nil {
-		glog.Fatalf("error accessing flag %s for command %s: %v", flag, cmd.Name(), err)
+		klog.Fatalf("error accessing flag %s for command %s: %v", flag, cmd.Name(), err)
 	}
 	return b
 }

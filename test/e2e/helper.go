@@ -258,7 +258,7 @@ func waitDeploymentReady(kubeClient kubernetes.Interface, d *apps.Deployment) er
 }
 
 func DeploymentComplete(deployment *apps.Deployment, newStatus *apps.DeploymentStatus) bool {
-	glog.Infof("Number of ready pod %v", newStatus.ReadyReplicas)
+	klog.Infof("Number of ready pod %v", newStatus.ReadyReplicas)
 	return newStatus.ReadyReplicas == *(deployment.Spec.Replicas)
 }
 
