@@ -19,8 +19,8 @@ package controller
 import (
 	"fmt"
 
-	"github.com/golang/glog"
 	"k8s.io/apimachinery/pkg/util/validation"
+	"k8s.io/klog"
 
 	genev1alpha1 "kubegene.io/kubegene/pkg/apis/gene/v1alpha1"
 )

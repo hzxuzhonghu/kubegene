@@ -24,8 +24,8 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/golang/glog"
 	. "github.com/onsi/gomega"
+	"k8s.io/klog"
 )
 
 type genectlWrapper struct {

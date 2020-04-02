@@ -20,7 +20,6 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/golang/glog"
 	batch "k8s.io/api/batch/v1"
 	"k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -32,6 +31,7 @@ import (
 	"k8s.io/client-go/tools/cache"
 	"k8s.io/client-go/tools/record"
 	"k8s.io/client-go/util/workqueue"
+	"k8s.io/klog"
 
 	genev1alpha1 "kubegene.io/kubegene/pkg/apis/gene/v1alpha1"
 	geneclientset "kubegene.io/kubegene/pkg/client/clientset/versioned/typed/gene/v1alpha1"

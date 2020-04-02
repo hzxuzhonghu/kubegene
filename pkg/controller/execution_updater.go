@@ -23,9 +23,9 @@ import (
 	"time"
 
 	"github.com/evanphx/json-patch"
-	"github.com/golang/glog"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/util/wait"
+	"k8s.io/klog"
 
 	genev1alpha1 "kubegene.io/kubegene/pkg/apis/gene/v1alpha1"
 	geneclientset "kubegene.io/kubegene/pkg/client/clientset/versioned/typed/gene/v1alpha1"

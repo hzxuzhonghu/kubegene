@@ -22,9 +22,9 @@ import (
 	"os"
 
 	"github.com/ghodss/yaml"
-	"github.com/golang/glog"
 	"github.com/spf13/cobra"
 	"k8s.io/apimachinery/pkg/util/uuid"
+	"k8s.io/klog"
 	//"time"
 	"path"
 	"strings"

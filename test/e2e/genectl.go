@@ -25,10 +25,10 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/golang/glog"
 	"k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
+	"k8s.io/klog"
 
 	genev1alpha1 "kubegene.io/kubegene/pkg/apis/gene/v1alpha1"
 	execclientset "kubegene.io/kubegene/pkg/client/clientset/versioned"

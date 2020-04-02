@@ -21,7 +21,6 @@ import (
 	"time"
 
 	"github.com/ghodss/yaml"
-	"github.com/golang/glog"
 	"io/ioutil"
 	apps "k8s.io/api/apps/v1"
 	"k8s.io/api/core/v1"
@@ -30,6 +29,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/util/wait"
 	"k8s.io/client-go/kubernetes"
+	"k8s.io/klog"
 	"path/filepath"
 
 	genev1alpha1 "kubegene.io/kubegene/pkg/apis/gene/v1alpha1"

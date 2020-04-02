@@ -23,7 +23,6 @@ import (
 	"reflect"
 	"time"
 
-	"github.com/golang/glog"
 	apiv1 "k8s.io/api/core/v1"
 	apiextensionsv1beta1 "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1"
 	apiextensionsclient "k8s.io/apiextensions-apiserver/pkg/client/clientset/clientset"
@@ -38,6 +37,7 @@ import (
 	"k8s.io/client-go/tools/leaderelection"
 	"k8s.io/client-go/tools/leaderelection/resourcelock"
 	"k8s.io/client-go/tools/record"
+	"k8s.io/klog"
 
 	"kubegene.io/kubegene/cmd/kube-dag/app/options"
 	"kubegene.io/kubegene/pkg/apis/gene"
