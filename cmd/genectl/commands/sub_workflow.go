@@ -17,15 +17,16 @@ limitations under the License.
 package commands
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/spf13/cobra"
+	"html/template"
 	"io/ioutil"
 	"os"
 
-	"bytes"
 	"github.com/renstrom/dedent"
-	"html/template"
+	"github.com/spf13/cobra"
+
 	"kubegene.io/kubegene/cmd/genectl/client"
 	"kubegene.io/kubegene/cmd/genectl/parser"
 	"kubegene.io/kubegene/cmd/genectl/util"
